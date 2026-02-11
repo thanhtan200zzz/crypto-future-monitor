@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: crypto-future-monitor
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:5000
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production

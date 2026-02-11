@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Top Panel */
+.top-panel {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#symbolInput {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#symbolInput:focus {
+    outline: none;
+    border-color: #2ecc71;
+}
+
+.btn-add, .btn-remove {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.btn-add {
+    background-color: #2ecc71;
+}
+
+.btn-add:hover {
+    opacity: 0.9;
+}
+
+.btn-remove {
+    background-color: #e74c3c;
+}
+
+.btn-remove:hover {
+    opacity: 0.9;
+}
+
+/* Symbols Container */
+.symbols-container {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Symbol Card */
+.symbol-card {
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header */
+.card-header {
+    background-color: #34495e;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header .symbol-name {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    opacity: 0.9;
+}
+
+/* Card Content */
+.card-content {
+    padding: 15px;
+}
+
+/* Exchange Row */
+.exchange-row {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.exchange-label {
+    font-weight: bold;
+    width: 90px;
+    display: inline-block;
+}
+
+.exchange-data {
+    font-weight: bold;
+    flex: 1;
+}
+
+/* Exchange Icons */
+.exchange-label.binance::before { content: "🔵 "; }
+.exchange-label.gate::before { content: "🟢 "; }
+.exchange-label.okx::before { content: "🟡 "; }
+.exchange-label.bybit::before { content: "🔴 "; }
+.exchange-label.htx::before { content: "🔶 "; }
+.exchange-label.mexc::before { content: "⚪ "; }
+
+/* Price Colors */
+.price-positive {
+    color: #27ae60;
+}
+
+.price-negative {
+    color: #e74c3c;
+}
+
+/* Best Pairs Section */
+.best-section {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #ecf0f1;
+}
+
+.best-header {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.best-header::before {
+    content: "💎 ";
+}
+
+.best-pair {
+    font-size: 12px;
+    margin-bottom: 4px;
+    font-family: 'Courier New', monospace;
+    color: #555;
+}
+
+.best-pair .highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Loading State */
+.loading {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* Price Update Animation */
+@keyframes flash-green {
+    0%, 100% { background-color: transparent; }
+    50% { background-color: rgba(39, 174, 96, 0.2); }
+}
+
+@keyframes flash-red {
+    0%, 100% { background-color: transparent; }
+    50% { background-color: rgba(231, 76, 60, 0.2); }
+}
+
+.flash-up {
+    animation: flash-green 0.5s;
+}
+
+.flash-down {
+    animation: flash-red 0.5s;
+}
+
+/* No symbols message */
+.no-symbols {
+    text-align: center;
+    padding: 40px 20px;
+    color: #95a5a6;
+    font-size: 14px;
+}
